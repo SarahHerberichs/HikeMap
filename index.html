@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mes Randos Strava</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .rando-link {
+        display: block;
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mes Randos</h1>
+    <div id="map"></div>
+    <div id="rando-list"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/@mapbox/polyline@1.1.1/src/polyline.js"></script>
+
+    <script src="js/main.js"></script>
+    <script>
+      // Appelle la fonction pour afficher toutes les randos sur index
+      displayAllRandonnees();
+    </script>
+  </body>
+</html>

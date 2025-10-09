@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Détails Rando</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="rando-name"></h1>
+    <p id="rando-info"></p>
+    <div id="map"></div>
+    <a href="/index.html">Retour à la liste</a>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/@mapbox/polyline@1.1.1/src/polyline.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+      // Appelle la fonction pour afficher le détail selon l'ID dans l'URL
+      displayRandoDetail();
+    </script>
+  </body>
+</html>
