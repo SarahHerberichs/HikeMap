@@ -3,7 +3,7 @@ header('Content-Type: application/json');
 
 $client_id = '180269';
 $client_secret = '4146ee890c98c4d563ae3fb62ad717419e39d127';
-$tokenFile = __DIR__ . '/../tokens.json';
+$tokenFile = __DIR__ . '/../api/tokens.json';
 
 if (!file_exists($tokenFile)) {
   echo json_encode(["error" => "No token found"]);
@@ -34,6 +34,7 @@ if ($tokens['expires_at'] <= $now) {
   ]);
   $resp = curl_exec($ch);
   curl_close($ch);
+  //Récup la data des tokens et mets dans le fichier
   $data = json_decode($resp, true);
   if (isset($data['access_token'])) {
     $tokens = array_merge($tokens, [

@@ -30,6 +30,8 @@ async function displayAllRandonnees() {
         .map((p) => [p[0], p[1]]);
       const line = L.polyline(latlngs, { color: "blue" }).addTo(map);
       map.fitBounds(line.getBounds());
+
+      L.marker(latlngs[0]).addTo(map).bindPopup(`Départ : ${act.name}`);
     }
   });
 }
@@ -61,5 +63,7 @@ async function displayRandoDetail() {
       .map((p) => [p[0], p[1]]);
     const line = L.polyline(latlngs, { color: "blue" }).addTo(map);
     map.fitBounds(line.getBounds());
+
+    L.marker(latlngs[0]).addTo(map).bindPopup("Départ").openPopup();
   }
 }

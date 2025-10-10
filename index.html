@@ -8,14 +8,51 @@
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     />
     <style>
-      #map {
-        height: 400px;
-        width: 100%;
-        margin-bottom: 20px;
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
       }
+
+      #map {
+        height: 60vh;
+        width: 100%;
+      }
+
       .rando-link {
         display: block;
         margin: 5px 0;
+      }
+
+      #rando-list {
+        max-height: 35vh; /* la liste reste visible mais compacte */
+        overflow-y: auto;
+        padding: 5px;
+      }
+
+      .rando-link {
+        display: block;
+        font-size: 1.1em; /* plus lisible */
+        font-weight: bold;
+        color: #2c3e50;
+        background-color: #ecf0f1;
+        padding: 8px 12px;
+        margin: 6px 0;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .rando-link:hover {
+        background-color: #3498db;
+        color: #fff;
+        transform: translateX(3px);
+      }
+      @media (max-width: 768px) {
+        #map {
+          height: 60vh;
+        }
       }
     </style>
   </head>
